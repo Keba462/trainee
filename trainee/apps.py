@@ -10,15 +10,17 @@ from edc_appointment.apps import AppConfig as BaseEdcAppointmentAppConfig
 from edc_visit_tracking.apps import AppConfig as BaseEdcVisitTrackingAppConfig
 from edc_visit_tracking.constants import SCHEDULED, UNSCHEDULED, LOST_VISIT
 from edc_protocol.apps import AppConfig as BaseEdcProtocolAppConfig
+from edc_identifier.apps import AppConfig as BaseEdcIdentifierAppConfig
 from dateutil.tz import gettz
 
 class AppConfig(DjangoAppConfig):
     name ='trainee'
     verbose_name ='trainee base App'
+    include_in_administration_section=True
 
 
 class EdcBaseAppConfig(BaseEdcBaseAppConfig):
-    project_name = 'Trainee Project'
+    project_name = 'trainee'
     institution = 'BHP'
 
 class EdcDeviceAppConfig(BaseEdcDeviceAppConfig):
@@ -61,3 +63,6 @@ class EdcProtocolAppConfig(BaseEdcProtocolAppConfig):
         2023, 5, 3, 0, 0, 0, tzinfo=gettz('UTC'))
     study_close_datetime = datetime(
         2025, 12, 1, 0, 0, 0, tzinfo=gettz('UTC'))
+
+class EdcIdentifierAppConfig(BaseEdcIdentifierAppConfig):
+    identifier_prefix = '122'

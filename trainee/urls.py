@@ -16,23 +16,35 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from django.views.generic.base import RedirectView
 from trainee.views.administration_view import AdministrationView
 from trainee.views.home_view import HomeView
 from trainee_subject.admin_site import trainee_subject_admin
 
+app_name ='trainee'
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('admin/',trainee_subject_admin.urls),
-    path('home/', HomeView.as_view(), name='home_url'),
-    path('', HomeView.as_view(), name='home_url'),
-    path('administration/', AdministrationView.as_view(),
-         name='administration_url'),
+
     path('accounts/', include('edc_base.auth.urls')),
     path('admin/', include('edc_base.auth.urls')),
+
+
+    path('admin/', admin.site.urls),
+    path('admin/',trainee_subject_admin.urls),
+    path('administration/', AdministrationView.as_view(),
+         name='administration_url'),
+         
+    path('admin/trainee_subject/',RedirectView.as_view(url='admin/trainee_subject/'),
+         name='trainee_subject_models_url'),
+   
 
 
     path('edc_base/', include('edc_base.urls')),
     path('edc_device/', include('edc_device.urls')),
     path('edc_protocol/', include('edc_protocol.urls')),
+    path('trainee_subject/', include('trainee_subject.urls')),
+
+    path('home/', HomeView.as_view(), name='home_url'),
+    path('', HomeView.as_view(), name='home_url'),
 
 ]

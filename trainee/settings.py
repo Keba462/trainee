@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'trainee.apps.EdcFacilityAppConfig',
     'trainee.apps.EdcAppointmentAppConfig',
     'trainee.apps.EdcVisitTrackingAppConfig',
+    'trainee.apps.EdcIdentifierAppConfig',
     'trainee_subject.apps.AppConfig',
     #'trainee.apps.EdcDeviceAppConfig',
     'trainee.apps.AppConfig',
@@ -89,7 +90,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'edc_subject_dashboard.middleware.DashboardMiddleware',
-    'edc_dashboard.middleware.DashboardMiddleware'
+    'edc_dashboard.middleware.DashboardMiddleware',
+    'django.contrib.sites.middleware.CurrentSiteMiddleware',
 ]
 
 ROOT_URLCONF = 'trainee.urls'
