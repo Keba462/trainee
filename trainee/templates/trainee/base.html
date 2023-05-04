@@ -1,0 +1,54 @@
+{% extends 'edc_base/base.html' %}
+
+
+
+{% block extra-scripts %}
+{{ block.super }}
+<script>
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+    $("#success-alert").fadeTo(1000, 500).slideUp(500, function(){
+        $("#success-alert").slideUp(500);
+    });    
+});
+
+</script>
+{% endblock extra-scripts %} 
+
+{% block extra-styles %}
+{{ block.super }}
+<style>
+  .panel-extended {
+    min-height: 200px;
+    overflow-y: scroll;
+  }
+  </style>
+{% endblock %}
+
+
+
+{% block topbar_navbar_extra_items %}
+
+    {{ block.super }}
+    {{ navbar.name }}
+
+{% endblock topbar_navbar_extra_items %}
+
+{% block alert %}
+    {{block.super}}
+    {% if OFFLINE %}
+        <div class="col-md-12">
+            <div class="alert alert-info">
+                <i class="fa fa-exclamation-circle"></i>
+                The system is currently running offline
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block modals %}
+
+{{ block.super }}
+    {% include 'trainee/help_modal.html' %}
+{% endblock modals %}
