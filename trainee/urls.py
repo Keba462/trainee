@@ -33,7 +33,7 @@ urlpatterns = [
     path('admin/',trainee_subject_admin.urls),
     path('administration/', AdministrationView.as_view(),
          name='administration_url'),
-         
+
     path('admin/trainee_subject/',RedirectView.as_view(url='admin/trainee_subject/'),
          name='trainee_subject_models_url'),
    
@@ -43,6 +43,7 @@ urlpatterns = [
     path('edc_device/', include('edc_device.urls')),
     path('edc_protocol/', include('edc_protocol.urls')),
     path('trainee_subject/', include('trainee_subject.urls')),
+    path('subject/', include('trainee_dashboard.urls')),
 
     path('home/', HomeView.as_view(), name='home_url'),
     path('', HomeView.as_view(), name='home_url'),

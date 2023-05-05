@@ -67,7 +67,9 @@ INSTALLED_APPS = [
     'edc_device.apps.AppConfig',
     'edc_lab.apps.AppConfig',
     'edc_navbar.apps.AppConfig',
+    'edc_dashboard.apps.AppConfig',
     'edc_timepoint.apps.AppConfig',
+    'edc_subject_dashboard.apps.AppConfig',
     'edc_action_item.apps.AppConfig',
     'edc_senaite_interface.apps.AppConfig',
     'trainee.apps.EdcBaseAppConfig',
@@ -77,6 +79,7 @@ INSTALLED_APPS = [
     'trainee.apps.EdcVisitTrackingAppConfig',
     'trainee.apps.EdcIdentifierAppConfig',
     'trainee_subject.apps.AppConfig',
+    'trainee_dashboard.apps.AppConfig',
     #'trainee.apps.EdcDeviceAppConfig',
     'trainee.apps.AppConfig',
 ]
@@ -176,5 +179,13 @@ HOLIDAY_FILE = os.path.join(BASE_DIR, 'holidays.csv')
 
 # dashboards
 DASHBOARD_URL_NAMES = {
-   
+    'subject_listboard_url': 'trainee_dashboard:subject_listboard_url',
+    'screening_listboard_url': 'trainee_dashboard:screening_listboard_url',
     }
+
+DASHBOARD_BASE_TEMPLATES = {
+    'listboard_base_template' : 'trainee/base.html',
+    'screening_listboard_template': 'trainee_dashboard/screening/listboard.html',
+    'subject_listboard_template': 'trainee_dashboard/subject/listboard.html',
+
+}
