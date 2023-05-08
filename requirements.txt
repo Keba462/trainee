@@ -69,8 +69,9 @@ smmap==5.0.0
 sqlparse==0.4.4
 toolz==0.12.0
 tqdm==4.65.0
--e git+https://github.com/Keba462/trainee-dashboard.git@e46b02f16e7d9ab823e5b1de1d542a0cab2da069#egg=trainee_dashboard
 -e git+https://github.com/Keba462/trainee-subject.git@3ac29ff85591b7fa9389a4bef573195b5919652d#egg=trainee_subject
+-e git+https://github.com/Keba462/trainee-dashboard.git@e46b02f16e7d9ab823e5b1de1d542a0cab2da069#egg=trainee_dashboard
+
 urllib3==1.26.15
 wcwidth==0.2.6
 xlwt==1.3.0
