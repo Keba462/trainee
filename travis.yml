@@ -1,3 +1,10 @@
 language: python
-rmv:
-  - 3.11.1
+python:
+  - "3.9-dev"
+  - "3.11-dev" 
+install:
+  - pip install -r requirements.txt
+# command to run tests
+script:
+  - pytest
+os: osx
