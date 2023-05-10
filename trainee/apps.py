@@ -14,7 +14,7 @@ from edc_identifier.apps import AppConfig as BaseEdcIdentifierAppConfig
 from dateutil.tz import gettz
 from edc_data_manager.apps import AppConfig as BaseEdcDataManagerAppConfig
 
-subject_identifier = '122\-[0-9\-]+'
+from trainee_dashboard.patterns import subject_identifier
 
 class AppConfig(DjangoAppConfig):
     name ='trainee'
@@ -68,7 +68,7 @@ class EdcProtocolAppConfig(BaseEdcProtocolAppConfig):
         2025, 12, 1, 0, 0, 0, tzinfo=gettz('UTC'))
 
 class EdcIdentifierAppConfig(BaseEdcIdentifierAppConfig):
-    identifier_prefix = '122'
+    identifier_prefix = '703'
 
 class EdcDataManagerAppConfig(BaseEdcDataManagerAppConfig):
     identifier_pattern = subject_identifier

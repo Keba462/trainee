@@ -71,9 +71,11 @@ INSTALLED_APPS = [
     'edc_registration.apps.AppConfig',
     'edc_dashboard.apps.AppConfig',
     'edc_timepoint.apps.AppConfig',
+    'edc_locator.apps.AppConfig',
     'edc_subject_dashboard.apps.AppConfig',
     'edc_visit_schedule.apps.AppConfig',
     'edc_action_item.apps.AppConfig',
+    'edc_prn.apps.AppConfig',
     'edc_senaite_interface.apps.AppConfig',
     'trainee.apps.EdcBaseAppConfig',
     'trainee.apps.EdcProtocolAppConfig',
@@ -186,7 +188,7 @@ DASHBOARD_URL_NAMES = {
     'data_manager_listboard_url': 'edc_data_manager:data_manager_listboard_url',
     'subject_listboard_url': 'trainee_dashboard:subject_listboard_url',
     'screening_listboard_url': 'trainee_dashboard:screening_listboard_url',
-    'subject_dashboard_url': 'tarinee_dashboard:subject_dashboard_url',
+    'subject_dashboard_url': 'trainee_dashboard:subject_dashboard_url',
     }
 
 DASHBOARD_BASE_TEMPLATES = {
@@ -195,5 +197,6 @@ DASHBOARD_BASE_TEMPLATES = {
     'data_manager_listboard_template': 'edc_data_manager/listboard.html',
     'screening_listboard_template': 'trainee_dashboard/screening/listboard.html',
     'subject_listboard_template': 'trainee_dashboard/subject/listboard.html',
+    'subject_dashboard_template': 'trainee_dashboard/subject/dashboard.html',
 
 }
