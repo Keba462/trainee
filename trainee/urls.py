@@ -41,6 +41,7 @@ urlpatterns = [
 
     path('edc_base/', include('edc_base.urls')),
     path('edc_consent/', include('edc_consent.urls')),
+    path('edc_data_manager/', include('edc_data_manager.urls')),
     path('edc_device/', include('edc_device.urls')),
     path('edc_protocol/', include('edc_protocol.urls')),
     path('edc_visit_schedule/', include('edc_visit_schedule.urls')),

@@ -12,6 +12,9 @@ from edc_visit_tracking.constants import SCHEDULED, UNSCHEDULED, LOST_VISIT
 from edc_protocol.apps import AppConfig as BaseEdcProtocolAppConfig
 from edc_identifier.apps import AppConfig as BaseEdcIdentifierAppConfig
 from dateutil.tz import gettz
+from edc_data_manager.apps import AppConfig as BaseEdcDataManagerAppConfig
+
+subject_identifier = '122\-[0-9\-]+'
 
 class AppConfig(DjangoAppConfig):
     name ='trainee'
@@ -66,3 +69,6 @@ class EdcProtocolAppConfig(BaseEdcProtocolAppConfig):
 
 class EdcIdentifierAppConfig(BaseEdcIdentifierAppConfig):
     identifier_prefix = '122'
+
+class EdcDataManagerAppConfig(BaseEdcDataManagerAppConfig):
+    identifier_pattern = subject_identifier
