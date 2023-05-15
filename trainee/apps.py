@@ -13,6 +13,7 @@ from edc_protocol.apps import AppConfig as BaseEdcProtocolAppConfig
 from edc_identifier.apps import AppConfig as BaseEdcIdentifierAppConfig
 from dateutil.tz import gettz
 from edc_data_manager.apps import AppConfig as BaseEdcDataManagerAppConfig
+from edc_sms.apps import AppConfig as BaseEdcSmsAppConfig
 
 from trainee_dashboard.patterns import subject_identifier
 
@@ -72,3 +73,9 @@ class EdcIdentifierAppConfig(BaseEdcIdentifierAppConfig):
 
 class EdcDataManagerAppConfig(BaseEdcDataManagerAppConfig):
     identifier_pattern = subject_identifier
+
+
+class EdcSmsAppConfig(BaseEdcSmsAppConfig):
+    locator_model = 'trainee_subject.subjectlocator'
+    consent_model = 'trainee_subject.subjectconsent'
+    sms_model = 'trainee_subject.sms'

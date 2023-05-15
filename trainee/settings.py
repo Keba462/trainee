@@ -50,6 +50,9 @@ sys.stdout.write(style.SUCCESS(f'  * Reading config from {CONFIG_FILE}\n'))
 config = configparser.ConfigParser()
 config.read(CONFIG_PATH)
 
+# EDC SMS configuration
+BASE_API_URL = config['edc_sms']['base_api_url']
+
 ALLOWED_HOSTS = []
 
 
@@ -63,15 +66,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'django_q',
     'django_crypto_fields.apps.AppConfig',
     'edc_device.apps.AppConfig',
     'edc_lab.apps.AppConfig',
     'edc_navbar.apps.AppConfig',
     'edc_consent.apps.AppConfig',
     'edc_registration.apps.AppConfig',
+    'edc_model_admin.apps.AppConfig',
     'edc_dashboard.apps.AppConfig',
     'edc_timepoint.apps.AppConfig',
     'edc_locator.apps.AppConfig',
+    'edc_calendar.apps.AppConfig',
     'edc_subject_dashboard.apps.AppConfig',
     'edc_visit_schedule.apps.AppConfig',
     'edc_action_item.apps.AppConfig',
@@ -84,8 +90,10 @@ INSTALLED_APPS = [
     'trainee.apps.EdcVisitTrackingAppConfig',
     'trainee.apps.EdcIdentifierAppConfig',
     'trainee.apps.EdcDataManagerAppConfig',
+    'trainee.apps.EdcSmsAppConfig',
     'trainee_subject.apps.AppConfig',
     'trainee_dashboard.apps.AppConfig',
+    'trainee_visit_schedule.apps.AppConfig',
     #'trainee.apps.EdcDeviceAppConfig',
     'trainee.apps.AppConfig',
 ]
@@ -163,6 +171,8 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
+REVIEWER_SITE_ID = 41
+
 USE_TZ = True
 
 
@@ -180,6 +190,7 @@ DEVICE_ID = '22' #config['edc_device'].get('device_id', '22')
 DEVICE_ROLE = '' #config['edc_device'].get('role')
 
 COUNTRY = 'botswana'
+COMMUNITIES = config['communities']
 
 HOLIDAY_FILE = os.path.join(BASE_DIR, 'holidays.csv')
 
@@ -189,6 +200,7 @@ DASHBOARD_URL_NAMES = {
     'subject_listboard_url': 'trainee_dashboard:subject_listboard_url',
     'screening_listboard_url': 'trainee_dashboard:screening_listboard_url',
     'subject_dashboard_url': 'trainee_dashboard:subject_dashboard_url',
+    'contact_listboard_url': 'edc_sms:contact_listboard_url',
     }
 
 DASHBOARD_BASE_TEMPLATES = {
@@ -198,5 +210,6 @@ DASHBOARD_BASE_TEMPLATES = {
     'screening_listboard_template': 'trainee_dashboard/screening/listboard.html',
     'subject_listboard_template': 'trainee_dashboard/subject/listboard.html',
     'subject_dashboard_template': 'trainee_dashboard/subject/dashboard.html',
+    'contact_listboard_template': 'edc_sms/listboard.html',
 
 }

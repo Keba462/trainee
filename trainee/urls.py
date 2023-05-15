@@ -27,6 +27,8 @@ from edc_action_item.admin_site import edc_action_item_admin
 from edc_visit_schedule.admin_site import edc_visit_schedule_admin
 from edc_appointment.admin_site import edc_appointment_admin
 from edc_calendar.admin_site import edc_calendar_admin
+from edc_locator.admin_site import edc_locator_admin
+from edc_sms.admin_site import edc_sms_admin
 
 app_name ='trainee'
 
@@ -35,25 +37,28 @@ urlpatterns = [
     path('accounts/', include('edc_base.auth.urls')),
     path('admin/', include('edc_base.auth.urls')),
 
+    path('admin/', admin.site.urls),
+    path('admin/',trainee_subject_admin.urls),
+    path('admin/', edc_appointment_admin.urls),
     path('admin/', edc_data_manager_admin.urls),
     path('admin/', edc_action_item_admin.urls),
-     path('admin/', edc_appointment_admin.urls),
     path('admin/', edc_calendar_admin.urls),
+    path('admin/', edc_locator_admin.urls),
+    path('admin/', edc_sms_admin.urls),
+
     path('admin/edc_visit_schedule/', edc_visit_schedule_admin.urls),
    
 
 
 
-    path('admin/', admin.site.urls),
-    path('admin/',trainee_subject_admin.urls),
+    
     path('administration/', AdministrationView.as_view(),
          name='administration_url'),
-
     path('admin/trainee_subject/',RedirectView.as_view(url='admin/trainee_subject/'),
          name='trainee_subject_models_url'),
    
 
-
+    path('appointment/', include('edc_appointment.urls')),
     path('edc_base/', include('edc_base.urls')),
     path('edc_consent/', include('edc_consent.urls')),
     path('edc_data_manager/', include('edc_data_manager.urls')),
@@ -61,6 +66,7 @@ urlpatterns = [
     path('edc_protocol/', include('edc_protocol.urls')),
     path('edc_visit_schedule/', include('edc_visit_schedule.urls')),
     path('edc_registration/', include('edc_registration.urls')),
+    path('edc_sms/', include('edc_sms.urls')),
     path('trainee_subject/', include('trainee_subject.urls')),
     path('subject/', include('trainee_dashboard.urls')),
 
