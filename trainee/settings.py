@@ -72,6 +72,8 @@ INSTALLED_APPS = [
     'edc_lab.apps.AppConfig',
     'edc_navbar.apps.AppConfig',
     'edc_consent.apps.AppConfig',
+    'edc_reference.apps.AppConfig',
+    'edc_metadata_rules.apps.AppConfig',
     'edc_registration.apps.AppConfig',
     'edc_model_admin.apps.AppConfig',
     'edc_dashboard.apps.AppConfig',
@@ -90,11 +92,14 @@ INSTALLED_APPS = [
     'trainee.apps.EdcVisitTrackingAppConfig',
     'trainee.apps.EdcIdentifierAppConfig',
     'trainee.apps.EdcDataManagerAppConfig',
+    'trainee.apps.EdcMetadataAppConfig',
     'trainee.apps.EdcSmsAppConfig',
     'trainee_subject.apps.AppConfig',
     'trainee_dashboard.apps.AppConfig',
     'trainee_visit_schedule.apps.AppConfig',
-    #'trainee.apps.EdcDeviceAppConfig',
+    'trainee_reference.apps.AppConfig',
+    'trainee_metadata_rules.apps.AppConfig',
+    'trainee_prn.apps.AppConfig',
     'trainee.apps.AppConfig',
 ]
 
@@ -186,8 +191,12 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEVICE_ID = '22' #config['edc_device'].get('device_id', '22')
-DEVICE_ROLE = '' #config['edc_device'].get('role')
+DEVICE_ID = '22' 
+DEVICE_ROLE = ''
+
+PARENT_REFERENCE_MODEL1 = ''
+
+PARENT_REFERENCE_MODEL2 = ''
 
 COUNTRY = 'botswana'
 COMMUNITIES = config['communities']

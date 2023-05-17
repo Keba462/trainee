@@ -22,6 +22,7 @@ from django.views.generic.base import RedirectView
 from trainee.views.administration_view import AdministrationView
 from trainee.views.home_view import HomeView
 from trainee_subject.admin_site import trainee_subject_admin
+from trainee_prn.admin_site import trainee_prn_admin
 from edc_data_manager.admin_site import edc_data_manager_admin
 from edc_action_item.admin_site import edc_action_item_admin
 from edc_visit_schedule.admin_site import edc_visit_schedule_admin
@@ -29,6 +30,8 @@ from edc_appointment.admin_site import edc_appointment_admin
 from edc_calendar.admin_site import edc_calendar_admin
 from edc_locator.admin_site import edc_locator_admin
 from edc_sms.admin_site import edc_sms_admin
+from edc_reference.admin_site import edc_reference_admin
+from edc_lab.admin_site import edc_lab_admin
 
 app_name ='trainee'
 
@@ -39,12 +42,15 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
     path('admin/',trainee_subject_admin.urls),
+    path('admin/', trainee_prn_admin.urls),
     path('admin/', edc_appointment_admin.urls),
     path('admin/', edc_data_manager_admin.urls),
+    path('admin/', edc_lab_admin.urls),
     path('admin/', edc_action_item_admin.urls),
     path('admin/', edc_calendar_admin.urls),
     path('admin/', edc_locator_admin.urls),
     path('admin/', edc_sms_admin.urls),
+    path('admin/', edc_reference_admin.urls),
 
     path('admin/edc_visit_schedule/', edc_visit_schedule_admin.urls),
    
@@ -62,11 +68,14 @@ urlpatterns = [
     path('edc_base/', include('edc_base.urls')),
     path('edc_consent/', include('edc_consent.urls')),
     path('edc_data_manager/', include('edc_data_manager.urls')),
+    path('edc_subject_dashboard/', include('edc_subject_dashboard.urls')),
     path('edc_device/', include('edc_device.urls')),
     path('edc_protocol/', include('edc_protocol.urls')),
     path('edc_visit_schedule/', include('edc_visit_schedule.urls')),
     path('edc_registration/', include('edc_registration.urls')),
+    path('edc_reference/', include('edc_reference.urls')),
     path('edc_sms/', include('edc_sms.urls')),
+    path('trainee_prn/', include('trainee_prn.urls')),
     path('trainee_subject/', include('trainee_subject.urls')),
     path('subject/', include('trainee_dashboard.urls')),
 
