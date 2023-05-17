@@ -99,6 +99,7 @@ INSTALLED_APPS = [
     'trainee_visit_schedule.apps.AppConfig',
     'trainee_reference.apps.AppConfig',
     'trainee_metadata_rules.apps.AppConfig',
+    'trainee_labs.apps.AppConfig',
     'trainee_prn.apps.AppConfig',
     'trainee.apps.AppConfig',
 ]
