@@ -21,6 +21,11 @@ trainee.append_item(
          url_name= settings.DASHBOARD_URL_NAMES.get('subject_listboard_url')
          ))
 
+trainee.append_item(
+    NavbarItem(name='reports',
+               label='Reports',
+               fa_icon='fa-cogs',
+               url_name='trainee_reports:home_url'))
 
 
 site_navbars.register(trainee)

@@ -15,6 +15,8 @@ from edc_identifier.apps import AppConfig as BaseEdcIdentifierAppConfig
 from dateutil.tz import gettz
 from edc_data_manager.apps import AppConfig as BaseEdcDataManagerAppConfig
 from edc_sms.apps import AppConfig as BaseEdcSmsAppConfig
+from edc_senaite_interface.apps import AppConfig as BaseEdcSenaiteInterfaceAppConfig
+from edc_device.constants import CENTRAL_SERVER
 
 from trainee_dashboard.patterns import subject_identifier
 
@@ -90,3 +92,15 @@ class EdcMetadataAppConfig(BaseEdcMetadataAppConfig):
             'missed_visit', 'unscheduled_visit/contact']
         create_on_reasons = [SCHEDULED, UNSCHEDULED] + other_create_visit_reasons
         delete_on_reasons = [LOST_VISIT] + other_visit_reasons
+
+
+
+class EdcSenaiteInterfaceAppConfig(BaseEdcSenaiteInterfaceAppConfig):
+    host ="https://bhplims-dev.bhp.org.bw"
+    client = "Trainee"
+    courier = ""
+    result_models ={'trainee_subject':['subjectrequisitionresult','subjectresultvalue']}
+    sample_type_match = {'viral_load': 'Whole Blood EDTA'}
+    container_type_match = {'viral_load': 'EDTA tube'}
+    template_match = {'viral_load': 'HIV RNA PCR'}
+    

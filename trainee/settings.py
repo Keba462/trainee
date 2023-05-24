@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_q',
+    'django_extensions',
     'django_crypto_fields.apps.AppConfig',
     'edc_device.apps.AppConfig',
     'edc_lab.apps.AppConfig',
@@ -84,7 +85,6 @@ INSTALLED_APPS = [
     'edc_visit_schedule.apps.AppConfig',
     'edc_action_item.apps.AppConfig',
     'edc_prn.apps.AppConfig',
-    'edc_senaite_interface.apps.AppConfig',
     'trainee.apps.EdcBaseAppConfig',
     'trainee.apps.EdcProtocolAppConfig',
     'trainee.apps.EdcFacilityAppConfig',
@@ -92,6 +92,7 @@ INSTALLED_APPS = [
     'trainee.apps.EdcVisitTrackingAppConfig',
     'trainee.apps.EdcIdentifierAppConfig',
     'trainee.apps.EdcDataManagerAppConfig',
+    'trainee.apps.EdcSenaiteInterfaceAppConfig',
     'trainee.apps.EdcMetadataAppConfig',
     'trainee.apps.EdcSmsAppConfig',
     'trainee_subject.apps.AppConfig',
@@ -101,6 +102,7 @@ INSTALLED_APPS = [
     'trainee_metadata_rules.apps.AppConfig',
     'trainee_labs.apps.AppConfig',
     'trainee_prn.apps.AppConfig',
+    'trainee_reports.apps.AppConfig',
     'trainee.apps.AppConfig',
 ]
 
@@ -192,8 +194,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-DEVICE_ID = '22' 
-DEVICE_ROLE = ''
+DEVICE_ID = '99'
+DEVICE_ROLE = 'CentralServer'
 
 PARENT_REFERENCE_MODEL1 = ''
 
@@ -211,6 +213,7 @@ DASHBOARD_URL_NAMES = {
     'screening_listboard_url': 'trainee_dashboard:screening_listboard_url',
     'subject_dashboard_url': 'trainee_dashboard:subject_dashboard_url',
     'contact_listboard_url': 'edc_sms:contact_listboard_url',
+    'senaite_result_listboard_url': 'trainee_dashboard:subject_result_listboard_url',
     }
 
 DASHBOARD_BASE_TEMPLATES = {
@@ -221,5 +224,7 @@ DASHBOARD_BASE_TEMPLATES = {
     'subject_listboard_template': 'trainee_dashboard/subject/listboard.html',
     'subject_dashboard_template': 'trainee_dashboard/subject/dashboard.html',
     'contact_listboard_template': 'edc_sms/listboard.html',
+    'senaite_result_listboard_template': 'trainee_dashboard/result_listboard.html',
+    
 
 }
