@@ -121,6 +121,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'trainee.urls'
 
+SENAITE_CONFIGURATION = {
+    'OPTIONS': {
+        'read_default_file': '/etc/edc_senaite_interface/senaite.conf',
+    },
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
