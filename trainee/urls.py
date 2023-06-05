@@ -33,6 +33,9 @@ from edc_sms.admin_site import edc_sms_admin
 from edc_reference.admin_site import edc_reference_admin
 from edc_lab.admin_site import edc_lab_admin
 from edc_senaite_interface.admin_site import edc_senaite_interface_admin
+from trainee_export.admin_site import trainee_export_admin
+from trainee_calendar.admin_site import trainee_calendar_admin
+
 
 
 app_name ='trainee'
@@ -45,6 +48,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin/',trainee_subject_admin.urls),
     path('admin/', trainee_prn_admin.urls),
+    path('admin/',trainee_export_admin.urls),
+    path('admin/',trainee_calendar_admin.urls),
     
     path('admin/', edc_appointment_admin.urls),
     path('admin/', edc_data_manager_admin.urls),
@@ -83,8 +88,11 @@ urlpatterns = [
     path('edc_senaite_interface',include('edc_senaite_interface.urls')),
     path('edc_sms/', include('edc_sms.urls')),
     path('trainee_prn/', include('trainee_prn.urls')),
+
     path('trainee_subject/', include('trainee_subject.urls')),
     path('trainee_reports/', include('trainee_reports.urls')),
+    path('trainee_export/', include('trainee_export.urls')),
+    path('calendar/',include('trainee_calendar.urls')),
     path('subject/', include('trainee_dashboard.urls')),
 
     path('home/', HomeView.as_view(), name='home_url'),

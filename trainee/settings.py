@@ -67,6 +67,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django_q',
+    'crispy_forms',
     'django_extensions',
     'django_crypto_fields.apps.AppConfig',
     'edc_device.apps.AppConfig',
@@ -102,7 +103,9 @@ INSTALLED_APPS = [
     'trainee_metadata_rules.apps.AppConfig',
     'trainee_labs.apps.AppConfig',
     'trainee_prn.apps.AppConfig',
+    'trainee_export.apps.AppConfig',
     'trainee_reports.apps.AppConfig',
+    'trainee_calendar.apps.AppConfig',
     'trainee.apps.AppConfig',
 ]
 
@@ -220,6 +223,7 @@ DASHBOARD_URL_NAMES = {
     'subject_dashboard_url': 'trainee_dashboard:subject_dashboard_url',
     'contact_listboard_url': 'edc_sms:contact_listboard_url',
     'senaite_result_listboard_url': 'trainee_dashboard:subject_result_listboard_url',
+    'export_listboard_url': 'trainee_export:export_listboard_url',
     }
 
 DASHBOARD_BASE_TEMPLATES = {
@@ -231,6 +235,8 @@ DASHBOARD_BASE_TEMPLATES = {
     'subject_dashboard_template': 'trainee_dashboard/subject/dashboard.html',
     'contact_listboard_template': 'edc_sms/listboard.html',
     'senaite_result_listboard_template': 'trainee_dashboard/result_listboard.html',
+    'export_listboard_template': 'trainee_export/listboard.html',
+    
     
 
 }

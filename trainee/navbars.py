@@ -27,5 +27,17 @@ trainee.append_item(
                fa_icon='fa-cogs',
                url_name='trainee_reports:home_url'))
 
+trainee.append_item(
+    NavbarItem(name='export_data',
+               label=None,
+               fa_icon='fa fa-database',
+               url_name='trainee_export:home_url'))
+
+trainee.append_item(
+    NavbarItem(
+        name='calendar',
+        label='Calendar',
+        fa_icon='fa fa-calendar',
+        url_name='trainee_calendar:calendar'))
 
 site_navbars.register(trainee)
