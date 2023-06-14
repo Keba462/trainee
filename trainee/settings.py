@@ -191,6 +191,8 @@ USE_I18N = True
 REVIEWER_SITE_ID = 41
 
 USE_TZ = True
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -209,6 +211,7 @@ DEVICE_ROLE = 'CentralServer'
 PARENT_REFERENCE_MODEL1 = ''
 
 PARENT_REFERENCE_MODEL2 = ''
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 COUNTRY = 'botswana'
 COMMUNITIES = config['communities']

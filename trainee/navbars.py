@@ -6,7 +6,7 @@ trainee = Navbar(name='trainee')
 trainee.append_item(
     NavbarItem(
         name='eligible_subject',
-        label='subject_screening',
+        label='subject screening',
         title='Subject Screening',
         fa_icon='fa-user-plus',
         url_name= settings.DASHBOARD_URL_NAMES.get('screening_listboard_url')
