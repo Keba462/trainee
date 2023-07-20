@@ -102,7 +102,7 @@ stack-data==0.6.2
 toolz==0.12.0
 tqdm==4.65.0
 -e git+https://github.com/Keba462/trainee_calendar.git@e43144c88c1129b09bdea09c22ae68112ea19f45#egg=trainee_calendar
--e git+https://github.com/Keba462/trainee-dashboard.git@0037f5264896015f28ab60cb081b2e9263878716#egg=trainee_dashboard
+-e git+https://github.com/Keba462/trainee-dashboard.git@3841fd2de4c229171ffe439f6ca15f4e830bb0d8#egg=trainee_dashboard
 -e git+https://github.com/Keba462/trainee_export.git@fe6d8fe0cdaed110ba506f5897a140f788699b50#egg=trainee_export
 -e git+https://github.com/Keba462/trainee-labs.git@c89356b0f509f91b0388f0830f092df0ee58b4b4#egg=trainee_labs
 -e git+https://github.com/Keba462/trainee-metadata-rules.git@542bffde4242ca3fa0ae45823dcead9ef90cf3d0#egg=trainee_metadata_rules
