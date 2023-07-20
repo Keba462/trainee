@@ -68,7 +68,8 @@ urlpatterns = [
 
     path('administration/', AdministrationView.as_view(),
          name='administration_url'),
-    path('admin/trainee_subject/', RedirectView.as_view(url='admin/trainee_subject/'),
+    path('admin/trainee_subject/',
+         RedirectView.as_view(url='admin/trainee_subject/'),
          name='trainee_subject_models_url'),
 
 

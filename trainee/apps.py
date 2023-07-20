@@ -15,8 +15,8 @@ from edc_identifier.apps import AppConfig as BaseEdcIdentifierAppConfig
 from dateutil.tz import gettz
 from edc_data_manager.apps import AppConfig as BaseEdcDataManagerAppConfig
 from edc_sms.apps import AppConfig as BaseEdcSmsAppConfig
-from edc_senaite_interface.apps import AppConfig as BaseEdcSenaiteInterfaceAppConfig
-from edc_device.constants import CENTRAL_SERVER
+from edc_senaite_interface.apps import \
+    AppConfig as BaseEdcSenaiteInterfaceAppConfig
 
 from trainee_dashboard.patterns import subject_identifier
 
@@ -128,5 +128,5 @@ class EdcDataManagerAppConfig(BaseEdcDataManagerAppConfig):
             ['bhp.se.dmc@gmail.com']],
         'se_dmc': [
             ('se_dmc', 'SE & Data Management'),
-            ['adiphoko@bhp.org.bw', 'ckgathi@bhp.org.bw', 'imosweu@bhp.org.bw',
-             'mmotlhanka@bhp.org.bw', 'mchawawa@bhp.org.bw', 'nmunatsi@bhp.org.bw']]}
+            ['adiphoko@bhp.org.bw', 'ckgathi@bhp.org.bw'
+             'mchawawa@bhp.org.bw', 'nmunatsi@bhp.org.bw']]}
