@@ -81,7 +81,6 @@ Pillow==9.5.0
 prompt-toolkit==3.0.38
 ptyprocess==0.7.0
 pure-eval==0.2.2
-pycairo==1.23.0
 pycparser==2.21
 pycryptodome==3.17
 pycups==2.0.1
@@ -94,7 +93,6 @@ pytz==2023.3
 redis==3.5.3
 reportlab==4.0.0
 requests==2.29.0
-rlPyCairo==0.2.0
 six==1.16.0
 smmap==5.0.0
 sqlparse==0.4.4
