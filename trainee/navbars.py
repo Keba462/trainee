@@ -9,17 +9,17 @@ trainee.append_item(
         label='subject screening',
         title='Subject Screening',
         fa_icon='fa-user-plus',
-        url_name= settings.DASHBOARD_URL_NAMES.get('screening_listboard_url')
-        ))
+        url_name=settings.DASHBOARD_URL_NAMES.get('screening_listboard_url')
+    ))
 
 trainee.append_item(
-     NavbarItem(
-       name='trainee_subject',
-         label='subjects',
-         title= 'Subjects',
-         fa_icon='far fa-user-circle',
-         url_name= settings.DASHBOARD_URL_NAMES.get('subject_listboard_url')
-         ))
+    NavbarItem(
+        name='trainee_subject',
+        label='subjects',
+        title='Subjects',
+        fa_icon='far fa-user-circle',
+        url_name=settings.DASHBOARD_URL_NAMES.get('subject_listboard_url')
+    ))
 
 trainee.append_item(
     NavbarItem(name='reports',

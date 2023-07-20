@@ -20,15 +20,17 @@ from edc_device.constants import CENTRAL_SERVER
 
 from trainee_dashboard.patterns import subject_identifier
 
+
 class AppConfig(DjangoAppConfig):
-    name ='trainee'
-    verbose_name ='trainee base App'
-    include_in_administration_section=True
+    name = 'trainee'
+    verbose_name = 'trainee base App'
+    include_in_administration_section = True
 
 
 class EdcBaseAppConfig(BaseEdcBaseAppConfig):
     project_name = 'trainee'
     institution = 'BHP'
+
 
 class EdcDeviceAppConfig(BaseEdcDeviceAppConfig):
     use_settings = True
@@ -43,7 +45,8 @@ class EdcFacilityAppConfig(BaseEdcFacilityAppConfig):
                              slots=[100, 100, 100, 100, 100, 100, 100]),
         '5-day clinic': dict(days=[MO, TU, WE, TH, FR],
                              slots=[100, 100, 100, 100, 100])
-        }
+    }
+
 
 class EdcAppointmentAppConfig(BaseEdcAppointmentAppConfig):
     send_sms_reminders = True
@@ -58,7 +61,7 @@ class EdcAppointmentAppConfig(BaseEdcAppointmentAppConfig):
 class EdcVisitTrackingAppConfig(BaseEdcVisitTrackingAppConfig):
     visit_models = {
         'trainee_subject': ('subject_visit', 'trainee_subject.subjectvisit')
-        }
+    }
 
 
 class EdcProtocolAppConfig(BaseEdcProtocolAppConfig):
@@ -71,8 +74,10 @@ class EdcProtocolAppConfig(BaseEdcProtocolAppConfig):
     study_close_datetime = datetime(
         2025, 12, 1, 0, 0, 0, tzinfo=gettz('UTC'))
 
+
 class EdcIdentifierAppConfig(BaseEdcIdentifierAppConfig):
     identifier_prefix = '703'
+
 
 class EdcSmsAppConfig(BaseEdcSmsAppConfig):
     locator_model = 'trainee_subject.subjectlocator'
@@ -81,25 +86,25 @@ class EdcSmsAppConfig(BaseEdcSmsAppConfig):
 
 
 class EdcMetadataAppConfig(BaseEdcMetadataAppConfig):
-        reason_field = {'trainee_subject.subjectvisit': 'reason'}
-        other_visit_reasons = ['off study', 'deferred', 'death']
-        other_create_visit_reasons = [
-            'initial_visit/contact', 'fu_visit/contact',
-            'missed_visit', 'unscheduled_visit/contact']
-        create_on_reasons = [SCHEDULED, UNSCHEDULED] + other_create_visit_reasons
-        delete_on_reasons = [LOST_VISIT] + other_visit_reasons
-
+    reason_field = {'trainee_subject.subjectvisit': 'reason'}
+    other_visit_reasons = ['off study', 'deferred', 'death']
+    other_create_visit_reasons = [
+        'initial_visit/contact', 'fu_visit/contact',
+        'missed_visit', 'unscheduled_visit/contact']
+    create_on_reasons = [SCHEDULED, UNSCHEDULED] + other_create_visit_reasons
+    delete_on_reasons = [LOST_VISIT] + other_visit_reasons
 
 
 class EdcSenaiteInterfaceAppConfig(BaseEdcSenaiteInterfaceAppConfig):
-    host ="https://bhplims-dev.bhp.org.bw"
+    host = "https://bhplims-dev.bhp.org.bw"
     client = "Trainee"
     courier = ""
-    result_models ={'trainee_subject':['subjectrequisitionresult','subjectresultvalue']}
+    result_models = {'trainee_subject': [
+        'subjectrequisitionresult', 'subjectresultvalue']}
     sample_type_match = {'viral_load': 'Whole Blood EDTA'}
     container_type_match = {'viral_load': 'EDTA tube'}
     template_match = {'viral_load': 'HIV RNA PCR'}
-    
+
 
 class EdcDataManagerAppConfig(BaseEdcDataManagerAppConfig):
     identifier_pattern = subject_identifier

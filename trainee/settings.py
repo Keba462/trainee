@@ -21,7 +21,6 @@ from django.core.management.color import color_style
 style = color_style()
 
 
-
 APP_NAME = 'trainee'
 
 ETC_DIR = os.path.join('/etc/', APP_NAME)
@@ -227,10 +226,10 @@ DASHBOARD_URL_NAMES = {
     'contact_listboard_url': 'edc_sms:contact_listboard_url',
     'senaite_result_listboard_url': 'trainee_dashboard:subject_result_listboard_url',
     'export_listboard_url': 'trainee_export:export_listboard_url',
-    }
+}
 
 DASHBOARD_BASE_TEMPLATES = {
-    'listboard_base_template' : 'trainee/base.html',
+    'listboard_base_template': 'trainee/base.html',
     'dashboard_base_template': 'trainee/base.html',
     'data_manager_listboard_template': 'edc_data_manager/listboard.html',
     'screening_listboard_template': 'trainee_dashboard/screening/listboard.html',
@@ -239,7 +238,7 @@ DASHBOARD_BASE_TEMPLATES = {
     'contact_listboard_template': 'edc_sms/listboard.html',
     'senaite_result_listboard_template': 'trainee_dashboard/result_listboard.html',
     'export_listboard_template': 'trainee_export/listboard.html',
-    
-    
+
+
 
 }
